@@ -1,0 +1,44 @@
+# Predictors of First-Year STEM Success
+
+Master of Predictive Analytics thesis, Curtin University (2026).
+
+## Question
+Which factors best predict first-year academic success for STEM students, and how much does school mathematics preparation matter?
+
+## Data
+- Administrative records for 14,000+ Curtin students, 2021–2024
+- Several source tables linked on unique student identifiers
+- Raw data is confidential and **not included** in this repository. Code runs on the same schema; a small synthetic sample is provided in `data/sample/` for demonstration.
+
+## Method
+1. Data cleaning: merge sources, resolve missing and inconsistent fields, create features
+2. Exploratory analysis and ANOVA
+3. Models: logistic regression and Random Forest (Python, scikit-learn)
+4. Validation and feature importance ranking
+
+## Key findings
+- Prior academic performance (ATAR) was the strongest predictor, at about 67–72% of feature importance.
+- School mathematics preparation was the second most important factor.
+- Students with advanced school maths scored about 21 percentage points higher than students with basic maths.
+
+## Repository structure
+```
+data/sample/        synthetic example data
+notebooks/          exploration and modelling notebooks
+src/                cleaning, features and model scripts
+reports/            figures and final report
+requirements.txt
+```
+
+## How to run
+```bash
+pip install -r requirements.txt
+python src/clean.py --input data/sample
+python src/train.py
+```
+
+## Tools
+Python · pandas · scikit-learn · matplotlib
+
+## Author
+Battsetseg
